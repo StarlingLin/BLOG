@@ -22,8 +22,8 @@
             <link>https://starlinglin.github.io/computer-science/data-structure-note/%E6%A4%8B%E9%B8%9F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0%20%EF%BC%832%EF%BC%9A%E5%A4%8D%E6%9D%82%E5%BA%A6/</link>
             <category term="计算机科学" scheme="https://starlinglin.github.io/categories/computer-science/" />
             <category term="数据结构笔记" scheme="https://starlinglin.github.io/categories/computer-science/data-structure-note/" />
-            <category term="数据结构" scheme="https://starlinglin.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
             <category term="算法" scheme="https://starlinglin.github.io/tags/%E7%AE%97%E6%B3%95/" />
+            <category term="数据结构" scheme="https://starlinglin.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
             <category term="复杂度" scheme="https://starlinglin.github.io/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6/" />
             <pubDate>Wed, 27 Mar 2024 14:55:15 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
@@ -676,8 +676,8 @@ $ gcc -c test.s -o test.o
             <category term="计算机科学" scheme="https://starlinglin.github.io/categories/computer-science/" />
             <category term="C语言笔记" scheme="https://starlinglin.github.io/categories/computer-science/C-programme-note/" />
             <category term="C" scheme="https://starlinglin.github.io/tags/C/" />
-            <category term="内存" scheme="https://starlinglin.github.io/tags/%E5%86%85%E5%AD%98/" />
             <category term="函数" scheme="https://starlinglin.github.io/tags/%E5%87%BD%E6%95%B0/" />
+            <category term="内存" scheme="https://starlinglin.github.io/tags/%E5%86%85%E5%AD%98/" />
             <pubDate>Sat, 06 Jan 2024 20:13:19 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
 &lt;p&gt;该系列为本人的学习笔记，主要由本人整理书写而成。部分内容来自教材、视频课程等，不能保证完全原创性。&lt;/p&gt;
@@ -1107,8 +1107,8 @@ $ gcc -c test.s -o test.o
             <category term="计算机科学" scheme="https://starlinglin.github.io/categories/computer-science/" />
             <category term="C语言笔记" scheme="https://starlinglin.github.io/categories/computer-science/C-programme-note/" />
             <category term="C" scheme="https://starlinglin.github.io/tags/C/" />
-            <category term="内存" scheme="https://starlinglin.github.io/tags/%E5%86%85%E5%AD%98/" />
             <category term="函数" scheme="https://starlinglin.github.io/tags/%E5%87%BD%E6%95%B0/" />
+            <category term="内存" scheme="https://starlinglin.github.io/tags/%E5%86%85%E5%AD%98/" />
             <pubDate>Tue, 05 Dec 2023 21:23:29 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
 &lt;p&gt;该系列为本人的学习笔记，主要由本人整理书写而成。部分内容来自教材、视频课程等，不能保证完全原创性。&lt;/p&gt;
