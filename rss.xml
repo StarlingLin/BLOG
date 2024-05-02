@@ -1611,8 +1611,8 @@ O(N^N)&amp;gt;O(N!)&amp;gt;O(2^N)&amp;gt;O(N^3)&amp;gt;O(N^2)&amp;gt;O(NlogN)&am
             <category term="计算机科学" scheme="https://www.starlinglin.com/categories/computer-science/" />
             <category term="C语言笔记" scheme="https://www.starlinglin.com/categories/computer-science/C-programme-note/" />
             <category term="C" scheme="https://www.starlinglin.com/tags/C/" />
-            <category term="结构体" scheme="https://www.starlinglin.com/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" />
             <category term="内存" scheme="https://www.starlinglin.com/tags/%E5%86%85%E5%AD%98/" />
+            <category term="结构体" scheme="https://www.starlinglin.com/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" />
             <category term="柔性数组" scheme="https://www.starlinglin.com/tags/%E6%9F%94%E6%80%A7%E6%95%B0%E7%BB%84/" />
             <pubDate>Thu, 11 Jan 2024 20:24:40 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
