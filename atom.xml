@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.starlinglin.com</id>
     <title>博客</title>
-    <subtitle>欢迎来访~</subtitle>
+    <subtitle>欢迎来访</subtitle>
     <icon>https://www.starlinglin.com/images/favicon.ico</icon>
     <link href="https://www.starlinglin.com" />
     <author>
