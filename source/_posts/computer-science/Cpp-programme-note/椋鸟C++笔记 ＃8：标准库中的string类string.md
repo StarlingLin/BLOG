@@ -39,5 +39,62 @@ math: true
 
 C++中的string本质上是基于类模板的。虽然我们通常使用string，但它实际上是basic_string类模板的一个特例化版本（`std::basic_string<char>`）。采用类模板主要是因为字符是有很多类型的，常见的是ASCII字符（char），但是还有宽字符（wchar_t）、Unicode字符（char16_t、char32_t）等其他字符需要支持。
 
+#### string类常用接口（并不完全）
 
+##### string类常见构造
+
+| 构造                                                       | 解释                                                         |
+| ---------------------------------------------------------- | ------------------------------------------------------------ |
+| string();                                                  | 构造一个长度为0的空字符串。                                  |
+| string (const string& str);                                | 拷贝构造一个字符串。                                         |
+| string (const string& str, size_t pos, size_t len = npos); | 从一个已有字符串的pos位置开始，选取长度为len的子字符序列来构造一个字符串。(npos默认为-1，在size_t中即为4294967295，也就是说如果省略第三个参数就是往后有多少拷多少) |
+| string (const char* s);                                    | C语言字符串转为string。                                      |
+| string (const char* s, size_t n);                          | 从字符数组s中选前n个字符构造字符串。                         |
+| string (size_t n, char c);                                 | 构造一个长度为n，每一个字符都是c的字符串。                   |
+
+```cpp
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string s1 = "Hello world!";
+	string s2(s1);
+	string s3(s1, 5, 5);
+	string s4("Hello world!");
+	string s5("Hello world!", 5);
+	string s6(10, 'x');
+
+	return 0;
+}
+```
+
+##### string类常用容器操作
+
+###### size与length
+
+size和length两个函数的作用和原理完全相同，size用的更多。
+
+size函数是为了与STL标准容器的接口保持一致而产生的，也更符合容器的抽象概念。但是length这个更符合自然语言的接口也被保留下来了，为了兼容性。
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string s("Hello, World!");
+	cout << s.size() << endl;
+	cout << s.length() << endl;
+
+	return 0;
+}
+```
+
+###### capacity
+
+capacity函数返回字符串占用空间总大小。
 
