@@ -74,6 +74,10 @@ int main()
 
 ###### size与length
 
+`size_t size() const;`
+
+`size_t length() const;`
+
 size和length两个函数的作用和原理完全相同，size用的更多。
 
 size函数是为了与STL标准容器的接口保持一致而产生的，也更符合容器的抽象概念。但是length这个更符合自然语言的接口也被保留下来了，为了兼容性。
@@ -96,5 +100,91 @@ int main()
 
 ###### capacity
 
-capacity函数返回字符串占用空间总大小。
+`size_t capacity() const;`
+
+capacity函数返回字符串的容量。
+
+注意：**string会默认为字符串预先分配一段最小的初始容量**，这个容量可以根据编译器实现不同而有所不同。而当容量超出先前的容量时，就会**以顺序表的方式进行容量扩展，而不是精准到每一个字节扩展**。（可见数据结构笔记#1）
+
+比方说下面的程序在我的环境下运行输出为：15、15、15、31。
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string str1;
+	cout << str1.capacity() << endl;
+
+	string str2 = "Hello, World!";
+	cout << str2.capacity() << endl;
+
+	string str3 = "123456789012345";
+	cout << str3.capacity() << endl;
+
+	string str4 = "1234567890123456";
+	cout << str4.capacity() << endl;
+
+	return 0;
+}
+```
+
+###### empty
+
+`bool enpty() const;`
+
+检测字符串是否为空串，如果是返回true，如果否返回false。
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	string s1 = "a";
+	cout << s1.empty() << endl;	//0
+
+	string s2 = "";
+	cout << s2.empty() << endl;	//1
+
+	string s3;
+	cout << s3.empty() << endl;	//1
+
+	return 0;
+}
+```
+
+###### clear
+
+`void clear();`
+
+clear函数将string中的有效字符清空，但是不会改变底层空间的大小。
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	string s = "a";
+	cout << s.size() << endl;	//1
+	cout << s.capacity() << endl;	//15
+
+	s.clear();
+	cout << s.size() << endl;	//0
+	cout << s.capacity() << endl;	//15
+	cout << s << endl;
+}
+```
+
+###### reserve
+
+`void reserve(size_t n=0);`
+
+reserve函数为字符串预留空间，但是不改变有效元素个数。也就是说，reserve会改变capacity，但是不会影响size。另外，reserve的参数小于string底层空间总大小时，不会进行改变。
 
