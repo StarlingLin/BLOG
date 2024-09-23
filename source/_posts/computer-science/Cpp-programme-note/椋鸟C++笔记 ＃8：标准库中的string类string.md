@@ -9,6 +9,10 @@ tags:
 math: true
 ---
 
+:::warning
+本篇尚未完工
+:::
+
 :::info
 该系列为本人的学习笔记，主要由本人整理书写而成。部分内容来自教材、视频课程等，不能保证完全原创性。
 :::
@@ -38,6 +42,8 @@ math: true
 #### string类其实也是一个类模板
 
 C++中的string本质上是基于类模板的。虽然我们通常使用string，但它实际上是basic_string类模板的一个特例化版本（`std::basic_string<char>`）。采用类模板主要是因为字符是有很多类型的，常见的是ASCII字符（char），但是还有宽字符（wchar_t）、Unicode字符（char16_t、char32_t）等其他字符需要支持。
+
+#### string类的迭代器iterator
 
 #### string类常用接口（并不完全）
 
@@ -187,4 +193,105 @@ int main()
 `void reserve(size_t n=0);`
 
 reserve函数为字符串预留空间，但是不改变有效元素个数。也就是说，reserve会改变capacity，但是不会影响size。另外，reserve的参数小于string底层空间总大小时，不会进行改变。
+
+注意，reserve并不是将capacity改成其参数n的大小。而是继续以顺序表扩容的方式增大其容量以至于足以容纳这么多空间。比方说：
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string s("Hello world!");
+	cout << s.capacity() << endl;
+	s.reserve(5);
+	cout << s.capacity() << endl;
+	s.reserve(111);
+	cout << s.capacity() << endl;
+	s.reserve(112);
+	cout << s.capacity() << endl;
+
+	return 0;
+}
+```
+
+该程序在我的环境下的输出为：
+
+```bash
+15
+15
+111
+166
+```
+
+###### resize
+
+```cpp
+void resize (size_t n);
+void resize (size_t n, char c);
+```
+
+resize函数用于改变字符串的有效内容的大小。
+
+1. 当n比原先的size小：字符串将被截断到指定的大小。
+2. 当n比原先的size大：扩大字符串，用给定的字符c来填充扩展部分。如果没有给定c，则使用`\0`来填充。
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string s = "Hello";
+	cout << "s = " << s << endl;
+	cout << "s.size() = " << s.size() << endl;
+
+	s.resize(4);
+	cout << "s = " << s << endl;
+	cout << "s.size() = " << s.size() << endl;
+
+	s.resize(6, '!');
+	cout << "s = " << s << endl;
+	cout << "s.size() = " << s.size() << endl;
+
+	s.resize(10);
+	cout << "s = " << s << endl;
+	cout << "s.size() = " << s.size() << endl;
+
+	s.resize(12, '?');
+	cout << "s = " << s << endl;
+	cout << "s.size() = " << s.size() << endl;
+
+	return 0;
+}
+```
+
+上述程序输出为：
+
+```bash
+s = Hello
+s.size() = 5
+s = Hell
+s.size() = 4
+s = Hell!!
+s.size() = 6
+s = Hell!!
+s.size() = 10
+s = Hell!!??
+s.size() = 12
+```
+
+注意，这里`!!`和`??`之间是存在4个`\0`的，只是不会被打印出来。但实际上我们检视内存就能看到：
+
+![内存](1.png)
+
+##### string类对象的访问和遍历操作
+
+##### string类对象的修改操作
+
+
 
